@@ -1,0 +1,16 @@
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceViewModel.dll.config
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceViewModel.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceViewModel.pdb
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceModel.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\EntityFramework.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\MySql.Data.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceModel.pdb
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\CarServiceModel.dll.config
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\EntityFramework.xml
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\obj\Debug\CarServiceViewModel.csprojResolveAssemblyReference.cache
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\obj\Debug\CarServiceViewModel.csproj.CoreCompileInputs.cache
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\obj\Debug\CarServiceViewModel.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceViewModel\obj\Debug\CarServiceViewModel.pdb

@@ -1,0 +1,2 @@
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceView\obj\Debug\CarServiceView.csprojResolveAssemblyReference.cache
+C:\Users\e.pavlikova\source\repos\CarService\CarServiceView\obj\Debug\CarServiceView_MarkupCompile.cache
