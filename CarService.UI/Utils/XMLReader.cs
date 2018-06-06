@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace CarService.UI.Utils
 {
-    public class XMLReader
+    public class XMLReader : IReader<OrderViewModel>
     {
         private XDocument xDoc;
         public ObservableCollection<OrderViewModel> Read()

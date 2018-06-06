@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CarService.UI.Utils
 {
-    public class DatabaseReader
+    public class DatabaseReader: IReader<OrderViewModel>
     {
         private ApplicationContext db;
 

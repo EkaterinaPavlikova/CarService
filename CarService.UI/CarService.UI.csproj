@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="Utils\ChangeSourceCommand.cs" />
     <Compile Include="Utils\DatabaseReader.cs" />
+    <Compile Include="Utils\IReader.cs" />
     <Compile Include="Utils\XMLReader.cs" />
     <Compile Include="ViewModels\MainFormViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />
