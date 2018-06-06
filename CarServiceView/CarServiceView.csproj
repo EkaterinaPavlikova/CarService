@@ -93,11 +93,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CarServiceViewModel\CarServiceViewModel.csproj">
-      <Project>{64426396-b358-4424-9aa1-5eeae8e1c530}</Project>
-      <Name>CarServiceViewModel</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

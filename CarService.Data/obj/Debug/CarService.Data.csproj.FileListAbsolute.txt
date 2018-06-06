@@ -1,0 +1,13 @@
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\CarService.Data.dll.config
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\CarService.Data.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\CarService.Data.pdb
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\EntityFramework.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\MySql.Data.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\EntityFramework.xml
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\obj\Debug\CarService.Data.csprojResolveAssemblyReference.cache
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\obj\Debug\CarService.Data.csproj.CoreCompileInputs.cache
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\obj\Debug\CarService.Data.dll
+C:\Users\e.pavlikova\source\repos\CarService\CarService.Data\obj\Debug\CarService.Data.pdb

@@ -3,11 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Data.Entity;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarServiceViewModel
 {
@@ -24,7 +21,7 @@ namespace CarServiceViewModel
             get { return dataSources; }
             set { dataSources = value; }
         }
-        private string selectedItem = "База данных";
+        private string selectedItem = "";
         public String SelectedItem
         {
             get { return selectedItem; }
@@ -43,13 +40,49 @@ namespace CarServiceViewModel
 
         public CarServViewModel()
         {
-            DataSources.Add("База данных");
-            DataSources.Add("XML");
-            DataSources.Add("Бинарный файл");
+            //DataSources.Add("База данных");
+            //DataSources.Add("XML");
+            //DataSources.Add("Бинарный файл");
+
+            var clients = new ObservableCollection<Client>
+            {
+               new Client { Name = "p", Id=1 },
+               new Client { Name = "l" , Id=3 },
+                 new Client { Name = "j" , Id=11 },
+                new Client { Name="j" , Id=2 },
+            };
+
+            var cars = new ObservableCollection<Car> { new Car { Id = 3 } };
+
+            var orders = new ObservableCollection<Order>
+            {
+               new Order { Description = "hhhhhh", ClientId=1, CarId=3 },
+               new Order { Description = "uuu" , ClientId=1, CarId=3 },
+                 new Order { Description = "ttttt" , ClientId=1, CarId=3},
+                new Order { Description="eeeeeee" , ClientId=2, CarId=3 },
+            };
+
+            Orders = new ObservableCollection<OrderViewModel>((from order in orders
+                                                               join client in clients
+                                                               on order.ClientId equals client.Id
+                                                               join car in cars on order.CarId equals
+                                                               car.Id
+
+                                                               select new OrderViewModel
+                                                               (
+
+                                                                   order,
+                                                                   client,
+                                                                   car
+                                                               )
+
+                                      ).ToList());
+
+
 
             using (db = new ApplicationContext())
             {
-                Orders =  new ObservableCollection<OrderViewModel>((from order in db.Orders
+                /*Orders =  new ObservableCollection<OrderViewModel>((from order in db.Orders
                                          join client in db.Clients
                                          on order.ClientId equals client.Id
                                          join car in db.Cars
@@ -59,7 +92,7 @@ namespace CarServiceViewModel
                                                     order,
                                                     client,
                                                     car
-                                                 )).ToList());
+                                                 )).ToList());*/
             }
 
         }
