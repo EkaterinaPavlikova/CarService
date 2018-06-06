@@ -2,6 +2,7 @@
 using CarService.Data.Database;
 using CarService.Data.Models;
 using CarService.UI.Utils;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,21 +41,24 @@ namespace CarService.UI.ViewModels
                 return addCommand ??
                   (addCommand = new ChangeSourceCommand(obj =>
                   {
+                      IKernel ninjectKernel = new StandardKernel();
                       switch (SelectedItem)
                       {
                           case DataSourceTypes.Database:
-                              reader = new DatabaseReader();
-                              Orders = reader.Read();
+                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<DatabaseReader>();                             
                               break;
                           case DataSourceTypes.XML:
-                              reader = new XMLReader();
-                              Orders = reader.Read();
+                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();                          
                               break;
                           case DataSourceTypes.Binary:
+                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();
                               break;
                           default:
-                              break;                             
-                      }                    
+                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();
+                              break;
+                      }
+                      reader = ninjectKernel.Get<IReader<OrderViewModel>>();
+                      Orders = reader.Read();
                   }));
             }
         }
