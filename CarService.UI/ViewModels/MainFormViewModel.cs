@@ -13,7 +13,7 @@ namespace CarService.UI.ViewModels
 {
     public class MainFormViewModel : INotifyPropertyChanged
     {
-        //private ApplicationContext db;
+        private IReader<OrderViewModel> reader;
         private ObservableCollection<String> dataSources = new ObservableCollection<String>();
         private string selectedItem = "";
         private OrderViewModel selectedOrder;
@@ -43,12 +43,12 @@ namespace CarService.UI.ViewModels
                       switch (SelectedItem)
                       {
                           case DataSourceTypes.Database:
-                              var reader = new DatabaseReader();
+                              reader = new DatabaseReader();
                               Orders = reader.Read();
                               break;
                           case DataSourceTypes.XML:
-                              var reader2 = new XMLReader();
-                              Orders = reader2.Read();
+                              reader = new XMLReader();
+                              Orders = reader.Read();
                               break;
                           case DataSourceTypes.Binary:
                               break;
