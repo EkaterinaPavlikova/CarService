@@ -11,7 +11,7 @@
             <Setter Property="FontSize" Value="15" />
         </Style>
     </Window.Resources>
-    <Grid Margin="0,0,0,78">
+    <Grid Margin="5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="127*"/>
             <ColumnDefinition Width="141*"/>
@@ -23,9 +23,9 @@
             <RowDefinition Height="36*"/>
             <RowDefinition Height="638*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Список заказов:" Margin="10,8,92,0" Grid.Row="2"/>
+        <TextBlock Text="Список заказов:"  Grid.Row="2"/>
         <DataGrid x:Name="ordersGrid" AutoGenerateColumns="False" SelectedItem="{Binding SelectedOrder}" 
-                  ItemsSource="{Binding Orders}" Margin="10,10,19,48" Grid.Row="3" Grid.ColumnSpan="3">
+                  ItemsSource="{Binding Orders}" Grid.Row="3" Grid.ColumnSpan="3">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding OrderId}" Header="ID заказа" Width="60*"/>
                 <DataGridTextColumn Binding="{Binding CarBrand}" Header="Марка авто" Width="80*"/>
@@ -75,10 +75,10 @@
                   ItemsSource="{Binding DataSources}"    
                   SelectedItem="{Binding SelectedItem}"  
                   HorizontalAlignment="Left"
-                  Height="38" Margin="10,8,0,0" 
+                  Height="25" 
                   VerticalAlignment="Top" 
-                  Width="241" Grid.Row="1"/>
-        <Button Command="{Binding ChangeCommand}" FontSize="16" Content="Загрузить данные" Height="37" Margin="10,9,19,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock Text="Выберите источник данных:" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="3" Margin="10,14,0,0" Grid.RowSpan="2" />
+                  Width="200" Grid.Row="1"/>
+        <Button Command="{Binding ChangeCommand}" FontSize="14" Content="Загрузить данные" Height="25" Width="163" VerticalAlignment="Top" HorizontalAlignment="Right" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+        <TextBlock Text="Выберите источник данных:" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="3" Grid.RowSpan="2" />
     </Grid>
 </Window>

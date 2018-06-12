@@ -1,6 +1,7 @@
 ﻿using System;
 namespace CarService.Data.Models
 {
+    [Serializable]
     public class OrderModel
     {
         public int Id { get; set; }

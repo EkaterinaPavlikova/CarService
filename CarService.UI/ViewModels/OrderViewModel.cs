@@ -1,20 +1,18 @@
 ﻿using CarService.Data.Models;
 using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 
 namespace CarService.UI.ViewModels
 {
-    public class OrderViewModel: INotifyPropertyChanged
+    public class OrderViewModel: BaseViewModel
     {
         private OrderModel order;
         private ClientModel client;
         private CarModel car;
-        public OrderViewModel(OrderModel o, ClientModel cl, CarModel c)
+        public OrderViewModel(OrderModel o)
         {
             order = o;
-            car = c;
-            client = cl;
+            car = o.Car;
+            client = o.Client;
         }
 
         public OrderViewModel()
@@ -175,15 +173,6 @@ namespace CarService.UI.ViewModels
             }
         }
 
-
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
 
     }
 }

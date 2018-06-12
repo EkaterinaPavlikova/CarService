@@ -1,6 +1,8 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 namespace CarService.Data.Models
 {
+    [Serializable]
     public class ClientModel
     {
         public ClientModel()

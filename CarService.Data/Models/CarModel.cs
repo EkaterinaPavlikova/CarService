@@ -1,5 +1,8 @@
-﻿namespace CarService.Data.Models
+﻿using System;
+
+namespace CarService.Data.Models
 {
+    [Serializable]
     public class CarModel
     {
         public int Id { get; set; }

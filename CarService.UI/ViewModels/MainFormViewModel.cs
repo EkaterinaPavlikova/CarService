@@ -1,20 +1,21 @@
-﻿using CarService.Data.Constants;
+﻿using CarService.Data.Binary;
+using CarService.Data.Constants;
 using CarService.Data.Database;
+using CarService.Data.DataUtils;
 using CarService.Data.Models;
+using CarService.Data.XML;
 using CarService.UI.Utils;
 using Ninject;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Windows;
 
 namespace CarService.UI.ViewModels
 {
-    public class MainFormViewModel : INotifyPropertyChanged
+    public class MainFormViewModel : BaseViewModel
     {
-        private IReader<OrderViewModel> reader;
+        private IReader<OrderModel> reader;
         private ObservableCollection<String> dataSources = new ObservableCollection<String>();
         private string selectedItem = "";
         private OrderViewModel selectedOrder;
@@ -41,24 +42,30 @@ namespace CarService.UI.ViewModels
                 return addCommand ??
                   (addCommand = new ChangeSourceCommand(obj =>
                   {
+                      bool noSelect = false;
                       IKernel ninjectKernel = new StandardKernel();
                       switch (SelectedItem)
                       {
                           case DataSourceTypes.Database:
-                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<DatabaseReader>();                             
+                              ninjectKernel.Bind<IReader<OrderModel>>().To<DatabaseReader>();                             
                               break;
                           case DataSourceTypes.XML:
-                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();                          
+                              ninjectKernel.Bind<IReader<OrderModel>>().To<XMLReader>();                          
                               break;
                           case DataSourceTypes.Binary:
-                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();
+                              ninjectKernel.Bind<IReader<OrderModel>>().To<BinaryReader>();
                               break;
                           default:
-                              ninjectKernel.Bind<IReader<OrderViewModel>>().To<XMLReader>();
+                              MessageBox.Show("Не выбран способ загрузки данных ");
+                              noSelect = true;                            
                               break;
                       }
-                      reader = ninjectKernel.Get<IReader<OrderViewModel>>();
-                      Orders = reader.Read();
+                      if (!noSelect)
+                      {
+                          reader = ninjectKernel.Get<IReader<OrderModel>>();
+                          var orderModelsList = reader.Read();
+                          Orders = new ObservableCollection<OrderViewModel>(orderModelsList.Select(o => new OrderViewModel(o)));
+                      }
                   }));
             }
         }
@@ -92,13 +99,7 @@ namespace CarService.UI.ViewModels
             DataSources.Add(DataSourceTypes.XML);
             DataSources.Add(DataSourceTypes.Binary);         
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+       
     }
 
    }
